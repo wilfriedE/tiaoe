@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import {GAMESTATE} from './Game';
+import {GAMESTATE, } from './Game';
 
 class Box extends Component {
+
+  cellContent(){
+    let cell =  this.props.cell;
+    if(['-','|', '/', '\\'].includes(cell)){
+      return this.props.game.getPlayers()[this.props.game.getWinner()].mark;
+    } else {
+      return cell;
+    }
+  }
+
   render() {
     return (
-      <div id={this.props.id} className={"box " + this.props.cell + " box-"+this.props.id} onClick={ this.props.markCell } > </div>
+      <div id={this.props.id} className={"box " + this.cellContent() + " box-"+this.props.id + " " + (['-','|', '/', '\\'].includes(this.props.cell) ? 'highlight' : '') } onClick={ this.props.markCell } > </div>
     );
   }
 }
@@ -53,7 +63,7 @@ class PlayerStats extends Component {
       return (
         <div>
           <h4>Player {this.props.player} ( {this.props.players[this.props.player].mark } )</h4>
-          <h4>Wins/Losts: {this.props.players[this.props.player].wins } / {this.props.players[this.props.player].losts }  </h4>
+          <h4>Wins | Losts : {this.props.players[this.props.player].wins } | {this.props.players[this.props.player].losts }  </h4>
         </div>
       );
     }

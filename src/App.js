@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   render() {
-    const boxes = this.state.game.getGrid().map((cell, index) => <Box markCell={this.markCell.bind(this, index)} key={index} id={index} cell={cell} > </Box>);
+    const boxes = this.state.game.getGrid().map((cell, index) => <Box markCell={this.markCell.bind(this, index)} key={index} id={index} cell={cell} game={this.state.game} > </Box>);
 
     return (
       <div>

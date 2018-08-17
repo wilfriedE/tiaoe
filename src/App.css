@@ -15,6 +15,7 @@
     text-align: center;
 }
 
+
 .btn {
     cursor: pointer;
     border: 2px solid #52BE80;
@@ -27,6 +28,10 @@
 .box {
     min-height: 20vh;
     cursor: pointer;
+}
+
+.box.highlight {
+    background: #D35400;
 }
 
 .box.O::after {
