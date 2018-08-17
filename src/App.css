@@ -18,12 +18,12 @@
 
 .btn {
     cursor: pointer;
-    border: 2px solid #52BE80;
+    border: 1px solid #52BE80;
     border-radius: 5px;
     text-align: center;
     padding: 8px;
-    color: #7D3C98;
-    background: #F7F9F9;
+    color: #F7F9F9;
+    background: #7D3C98;
 }
 
 .box {
