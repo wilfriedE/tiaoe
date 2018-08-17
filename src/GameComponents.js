@@ -26,7 +26,7 @@ class MessageBoard extends Component {
      */
     playerTurn(){
       if(this.props.game.getGameState() !== GAMESTATE["ENDED"] ){
-        return <h4>{"Player " + this.props.game.currentPlayer() + "'s turn!"}</h4>;
+        return <h2>{"Player " + this.props.game.currentPlayer() + "'s turn!"}</h2>;
       }
       return '';
     }
@@ -42,7 +42,7 @@ class MessageBoard extends Component {
       } else if(game.getGameState() === GAMESTATE["ENDED"] && game.getWinner() === undefined) {
         message = <p>That was a tie! Click below to start a new game.</p>;
       } else if(game.getGameState() === GAMESTATE["ENDED"] ){
-        message = <p>Game is over. <strong>Player {game.getWinner()} is the winner! </strong></p>;
+        message = <p>Game is over. <h2> Player {game.getWinner()} is the winner! </h2></p>;
       }
       return message;
     }
@@ -63,7 +63,8 @@ class PlayerStats extends Component {
       return (
         <div>
           <h4>Player {this.props.player} ( {this.props.players[this.props.player].mark } )</h4>
-          <h4>Wins | Losts : {this.props.players[this.props.player].wins } | {this.props.players[this.props.player].losts }  </h4>
+          <h4>Wins : {this.props.players[this.props.player].wins } </h4>
+          <h4>Losses : {this.props.players[this.props.player].losts }  </h4>
         </div>
       );
     }

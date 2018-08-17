@@ -23,6 +23,7 @@
     text-align: center;
     padding: 8px;
     color: #7D3C98;
+    background: #F7F9F9;
 }
 
 .box {
@@ -31,13 +32,13 @@
 }
 
 .box.highlight {
-    background: #D35400;
+    background: #D5D8DC;
 }
 
 .box.O::after {
     position: relative;
     content: "\20DD";
-    font-size: 15vh;
+    font-size: 13vh;
     line-height: 20vh;
     color: #52BE80;
     text-align: center;
