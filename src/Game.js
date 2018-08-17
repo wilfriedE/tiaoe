@@ -1,5 +1,3 @@
-"use strict";
-
 const EMPTYBOX      = '';
 const CROSSDASH     = '-';
 const CROSSVERTICAL = '|';
@@ -41,12 +39,17 @@ class Game {
     getGameState(){
         return this.game_state;
     }
+
     /**
      * Retrieve the players
      * @returns {Object} an object containing players details 
      */
     getPlayers(){
         return this.players;
+    }
+
+    getGrid(){
+        return this.grid;
     }
 
     /**
@@ -130,7 +133,7 @@ class Game {
      */
     mark(pos){
         
-        if(this.grid[pos] === EMPTYBOX && this.game_state != GAMESTATE['ENDED']){
+        if(this.grid[pos] === EMPTYBOX && this.game_state !== GAMESTATE['ENDED']){
             this.grid[pos] = this.players[this.current_player].mark;
             if(this.checkWinner()){
                 this.winner = this.current_player;

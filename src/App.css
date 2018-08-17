@@ -1,0 +1,28 @@
+.game-grid {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-gap: 5px;
+}
+
+.box {
+    background-color: #FFC300;
+    min-height: 20vh;
+}
+
+.box.O::after {
+    position: relative;
+    content: "\20DD";
+    font-size: 15vh;
+    color: #DAF7A6;
+    text-align: center;
+    display: block;
+}
+
+.box.X:after {
+    position: relative;
+    content: "\274C";
+    font-size: 15vh;
+    color: #C70039;
+    text-align: center;
+    display: block;
+} 
