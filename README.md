@@ -2,9 +2,9 @@
 
 Click on a title and mark your selection. Who ever gets their mark three in a row, column or diagonal first wins.
 
-Click on the 'Start new button' and start a new game but maintain your accumulated points.
+Click on the 'Start new button' and start a new game.
 
-Players turn is randomly determine at startup.
+Players turn is randomly determine at startup. The game also keeps track of wins and losses.
 
 ### Running example
 ``` https://tiaoec.herokuapp.com/ ```
