@@ -6,7 +6,8 @@ Click on the 'Start new button' and start a new game but maintain your accumulat
 
 Players turn is randomly determine at startup.
 
-#
+### Running example
+``` https://tiaoec.herokuapp.com/ ```
 
 ### Running code localy
 ``` yarn install ``` </br>
