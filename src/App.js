@@ -32,6 +32,7 @@ class App extends Component {
         <div className="game-grid">
           { boxes }
         </div>
+
         <div className="stats-grid">
             <PlayerStats key={PLAYER1} player={PLAYER1} players={this.state.game.players} ></PlayerStats>
             <MessageBoard game={this.state.game} startNewGame={this.startNewGame.bind(this)} ></MessageBoard>

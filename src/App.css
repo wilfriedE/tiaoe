@@ -1,27 +1,30 @@
 .game-grid {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw;
-    grid-gap: 5px;
+    grid-gap: 0px;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: 16vw 28vw 16vw;
     grid-gap: 5px;
-    margin-top: 10px;
-    border: 2px solid #D35400;
-    background: #ffffff;
-}
-
-.player {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    border: 6px solid #727272;
+    align-items: center;
+    text-align: center;
 }
 
 .btn {
     cursor: pointer;
+    border: 2px solid #52BE80;
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px;
+    color: #7D3C98;
 }
 
 .box {
-    background-color: #FFC300;
     min-height: 20vh;
     cursor: pointer;
 }
@@ -29,7 +32,7 @@
 .box.O::after {
     position: relative;
     content: "\20DD";
-    font-size: 16vh;
+    font-size: 15vh;
     line-height: 20vh;
     color: #52BE80;
     text-align: center;
@@ -40,10 +43,48 @@
 .box.X:after {
     position: relative;
     content: "\d7";
-    font-size: 20vh;
+    font-size: 18vh;
     line-height: 20vh;
     color: #7D3C98;
     text-align: center;
     display: block;
     cursor: default;
+}
+
+.box.box-0 {
+ border-right: 6px solid #727272;
+ border-bottom: 6px solid #727272;
+}
+
+.box.box-1 {
+ border-right: 6px solid #727272;
+ border-bottom: 6px solid #727272;
+}
+
+
+.box.box-2 {
+    border-bottom: 6px solid #727272;
+   }
+
+.box.box-3 {
+    border-right: 6px solid #727272;
+}
+
+.box.box-4 {
+    border-right: 6px solid #727272;
+}
+
+.box.box-6 {
+    border-top: 6px solid #727272;
+    border-right: 6px solid #727272;
+}
+
+.box.box-7 {
+    border-top: 6px solid #727272;
+    border-right: 6px solid #727272;
+}
+
+
+.box.box-8 {
+    border-top: 6px solid #727272;
 }
