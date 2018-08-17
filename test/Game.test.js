@@ -30,6 +30,23 @@ describe( 'game startup', ()=>{
 
         assert.equal(game.getGameState(), GAMESTATE['ENDED']);
     })
+
+
+    it( 'should be end if there is a tie', ()=> {
+        game.startNewGame();
+        game.mark(0); // FIRST PLAYER
+        game.mark(1); // SECOND PLAYER
+        game.mark(3); // FIRST PLAYER
+        game.mark(6); // SECOND PLAYER
+        game.mark(4); // FIRST PLAYER
+        game.mark(8); // SECOND PLAYER
+        game.mark(7); // FIRST PLAYER
+        game.mark(5); // SECOND PLAYER
+        game.mark(2); // FIRST PLAYER
+
+        assert.equal(game.getGameState(), GAMESTATE['ENDED']);
+        assert.equal(game.getWinner(), undefined);
+    })
 })
 
 describe( 'game play', ()=>{

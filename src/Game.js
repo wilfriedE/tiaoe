@@ -20,7 +20,7 @@ class Game {
                                 2 : {mark: 'X', wins: 0, losts: 0}};
         this.game_state     = GAMESTATE['INITIALIZED'];
         this.grid           = new Array(9).fill(EMPTYBOX);
-        this.winner         = NaN;
+        this.winner         = undefined;
     }
 
     /**
@@ -28,8 +28,10 @@ class Game {
      */
     startNewGame(){
         this.current_player = Math.floor(Math.random() * 2)  + 1;
-        this.game_state    = GAMESTATE['STARTED'];
-        this.grid          = new Array(9).fill(EMPTYBOX);
+        this.other_player   = (this.current_player === PLAYER1) ? PLAYER2 : PLAYER1;
+        this.game_state     = GAMESTATE['STARTED'];
+        this.grid           = new Array(9).fill(EMPTYBOX);
+        this.winner         = undefined;
     }
 
     /**
@@ -127,6 +129,17 @@ class Game {
     }
 
     /**
+     * Check if a game ends in a tie.
+     * 
+     * @returns {Boolean} true if it's a a tie false otherwise.
+     */
+    checkScratch(){
+        let tie = true;
+        this.grid.forEach( (cell) => { if(cell === EMPTYBOX ) { tie = false; }});
+        return tie;
+    }
+
+    /**
      * Markes the selected box 
      * @param {Interger} pos the index of the box selected.
      * @returns {Boolean} true if valid selection false if invalid.
@@ -140,7 +153,10 @@ class Game {
                 this.players[this.current_player].wins+=1;
                 this.players[this.other_player].losts+=1;
                 this.game_state = GAMESTATE['ENDED'];
-            } else {
+            } else if (this.checkScratch()) {
+                this.game_state = GAMESTATE['ENDED'];
+            }
+             else {
                 this.game_state = GAMESTATE['ONGOING'];
                 this.switchPlayer();
             }
