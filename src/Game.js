@@ -166,4 +166,4 @@ class Game {
     }
 }
 
-module.exports = { Game, GAMESTATE };
+module.exports = { Game, GAMESTATE, PLAYER1, PLAYER2 };

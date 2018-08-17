@@ -4,25 +4,46 @@
     grid-gap: 5px;
 }
 
+.stats-grid {
+    display: grid;
+    grid-template-columns: 16vw 28vw 16vw;
+    grid-gap: 5px;
+    margin-top: 10px;
+    border: 2px solid #D35400;
+    background: #ffffff;
+}
+
+.player {
+}
+
+.btn {
+    cursor: pointer;
+}
+
 .box {
     background-color: #FFC300;
     min-height: 20vh;
+    cursor: pointer;
 }
 
 .box.O::after {
     position: relative;
     content: "\20DD";
-    font-size: 15vh;
-    color: #DAF7A6;
+    font-size: 16vh;
+    line-height: 20vh;
+    color: #52BE80;
     text-align: center;
     display: block;
+    cursor: default;
 }
 
 .box.X:after {
     position: relative;
-    content: "\274C";
-    font-size: 15vh;
-    color: #C70039;
+    content: "\d7";
+    font-size: 20vh;
+    line-height: 20vh;
+    color: #7D3C98;
     text-align: center;
     display: block;
-} 
+    cursor: default;
+}
